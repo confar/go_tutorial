@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Aggregator</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
+
+<body>
+<h1>{{ .Title }} </h1>
+
+<table id="fancy" class="display">
+    <thead>
+    <th>Titles</th>
+    <th>Keywords</th>
+    </thead>
+    <tbody>
+    {{ range $key, $value := .News }}
+        <tr>
+        <td><a href="{{$value.Location}}" target="_blank">{{ $key }}</a></td>
+        <td>{{ $value.Keyword }}</td>
+        </tr>
+                {{ end }}
+    </tbody>
+
+</table>
+
+<script>$(document).ready(function(){$('#fancy').DataTable();} );</script>
+
+</body>
+</html>
