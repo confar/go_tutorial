@@ -27,11 +27,10 @@ func (c *car) new_top_speed(newspeed float64)  {
 	}
 
 func main() {
-	//a_car := car{gas_pedal: 3225,
-	//			break_pedal: 0,
-	//			steering_wheel:1256,
-	//			top_speed_kmh: 225}
-	a_car := car{32255,0,1256,225}
+	a_car := car{gas_pedal: 3225,
+		     break_pedal: 0,
+		     steering_wheel:1256,
+		     top_speed_kmh: 225}
 	fmt.Println(a_car.gas_pedal)
 	fmt.Println(a_car.kmh())
 	fmt.Println(a_car.mph())
